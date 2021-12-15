@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <h3>Calculo de Porcentajes</h3>
+    <p>Ingrese Valor :  <input type="text" name="v1" id="v1"></p>
+    <p>Ingrese Porcentaje :  <input type="text" id="v2" name="v2"></p>
+    <p>Resultado Final :  <input type="text" name="res" id="res"></p>
+    <p id="op"></p>
+    <button onclick="calculo();">Calcular Porcentaje</button>
+    
+    <script type="text/javascript">
+
+        function calculo(){
+            let v1=document.getElementById('v1').value;
+            let v2=document.getElementById('v2').value;
+            let vv1=parseInt(v1,10);
+            let vv2=parseInt(v2,10);
+            const res=(vv1*vv2)/100
+            document.getElementById('res').value=res;
+            document.getElementById('op').innerHTML;
+        
+        }
+    </script>
+</body>
+</html>
