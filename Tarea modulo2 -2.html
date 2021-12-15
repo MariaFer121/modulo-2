@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Calculadora</title>
+   
+</head>
+<body>
+    <h1>Calculadora IMC</h1>
+    Peso: <input type="text" id="v1" name="v1"><br>
+    Altura: <input type="text" id="v2" name="v2"><br>
+    <button onclick="calcular();">Calcular IMC</button>
+    <p id="res"></p>
+    <p>IMC: <input type="text" name="res1" id="res1"></p>
+
+    <script type="text/javascript">
+        function calcular(){
+            let v1= document.getElementById('v1').value;
+            let v2= document.getElementById('v2').value;
+            let vv1= parseInt(v1,10);
+            let vv2= parseInt(v2,10);
+            let imc= (v1/(v2*v2));
+            
+            if (imc<18.5){
+                res="Peso inferior al normal";
+            
+            }else if (imc>=18.5 && imc<=24.9){
+                res="Peso normal";
+            }else if (imc>=25.0 && imc<=29.9){
+                res="Peso superior al normal";
+            }else if (imc>30){
+                res="Obesidad"
+            }
+            document.getElementById('res1').value=res;
+
+        }
+    </script>
+
+
+</body>
+</html>
