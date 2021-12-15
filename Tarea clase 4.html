@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Tarea en clases</title>
+    
+</head>
+<body>
+    <p>
+        Ingrese un numero:<input type="text" name="num" id="num"><br>
+        <button onclick="calculo();">calculo</button>
+        valor:<input type="text" name="val" id="val"><br>
+    </p>
+    <script type="text/javascript">
+        function calculo(){
+            let num=document.getElementById('num').value;
+
+            if(num>10 || num<2){
+                document.getElementById('val').value="Numero valido";
+            
+            }else{
+                document.getElementById('val').value="Numero no valido";
+            }
+        }
+    </script>
+
+    
+</body>
+</html>
