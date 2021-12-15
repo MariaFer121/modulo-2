@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title></title>
+    
+</head>
+<body>
+    <h1>Tarea Asincronica</h1>
+    <br>
+    Radio:<input type="text" name="v1" id="v1"><br>
+    resultado: <input type="text" name="res" id="res"><br>
+    <button onclick="cal();">Diametro</button><br>>
+    <button onclick="cal1();">Perimetro</button><br>>
+    <button onclick="cal2();">Area</button><br>>
+
+    <script type="text/javascript">
+        function cal(){
+            let v1=document.getElementById('v1').value;
+            let vv1=parseInt(v1,10);
+            let res=2*vv1;
+            document.getElementById('res').value=res;
+        }
+        function cal1(){
+            let v1=document.getElementById('v1').value;
+            let vv1=parseInt(v1,10);
+            let res=2*Math.PI*vv1;
+            document.getElementById('res').value=res;
+        }
+        function cal2(){
+            let v1=document.getElementById('v1').value;
+            let vv1=parseInt(v1,10);
+            let res=Math.PI*(vv1*vv1);
+            document.getElementById('res').value=res;
+        }
+    </script>
+</body>
+</html>
