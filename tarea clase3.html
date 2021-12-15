@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>TareaClaseM2C3</title>
+</head>
+<body>
+    <h3>Tarea en Clases</h3>
+    <p>Monto Bruto :  <input type="text" name="n1" id="v1"></p>
+    <p>IVA :  <input type="number" name="n2" min="19" max="19" id="v2"></p>
+    <p>Monto Neto :  <input type="text" name="res" id="res"></p>
+    <p>Valor IVA :  <input type="text" name="res1" id="res1"></p>
+    <p id="op"></p>
+    <button onclick="iva();">Calcular IVA</button>
+    
+    <script type="text/javascript">
+
+        function iva(){
+            let v1=document.getElementById('v1').value;
+            let v2=document.getElementById('v2').value;
+            let vv1=parseInt(v1,10);
+            let vv2=parseInt(v2,10);
+            const res=vv1*1.19;
+            const res1=(vv1*19)/100
+            document.getElementById('res').value=res;
+            document.getElementById('res1').value=res1;
+            document.getElementById('op').innerHTML;
+        
+        }
+    </script>
+</body>
+</html>
