@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+</head>
+<body>
+    Nota 1<input type="text" name="v1" id="v1"><br>
+    Nota 2<input type="text" name="v2" id="v2"><br>
+    Nota 3<input type="text" name="v3" id="v3"><br>
+    Nota 4<input type="text" name="v4" id="v4"><br>
+    <button type="button" onclick="evaluar();">Calcular Promedio</button>
+    <p>Promedio: <input type="text" name="res1" id="res1"></p>
+    <p id="res2"></p>
+    <script type="text/javascript">
+        function evaluar(){
+            
+            let v1= document.getElementById('v1').value;
+            let v2= document.getElementById('v2').value;
+            let v3= document.getElementById('v3').value;
+            let v4= document.getElementById('v4').value;
+            let i1= parseInt(v1,10);
+            let i2= parseInt(v2,10);
+            let i3= parseInt(v3,10);
+            let i4= parseInt(v4,10);
+            let res="";
+        
+			if(((i1+i2+i3+i4)/4)>4){
+				res="Aprobado";
+			}
+            else{
+				res="Reprobado";
+			}
+            document.getElementsByClassName('res1').value=res;
+			document.getElementById('res2').innerHTML=res;
+		}
+    </script>
+
+
+</body>
+</html>
