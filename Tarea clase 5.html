@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Tarea clase 5</title>
+ 
+</head>
+<body>
+    <h1>Tabla de multipiclar</h1>
+    <p>
+        <button onclick="tabla();">For</button>
+        <button onclick="tabla1();">While</button>
+        <button onclick="tabla2();">Do</button>
+    </p>
+    <script type="text/javascript">
+        function tabla(){
+            let v1=prompt("Ingrese numero");
+            for (let i=1;i<11 ;i++){
+                let res=v1*i;
+                document.write(v1+"*"+i+" = "+res+"<br>");
+
+            }
+        }
+        function tabla1(){
+            let x =1;
+            let v1=prompt("Ingrese Numero");
+            while(x<11){
+                let res=v1*x;
+                document.write(1+"*"+x+"="+res+"<br>");
+                x++;
+            }
+
+        }
+        function tabla2(){
+            let x=1;
+            let v1=prompt("INGRESE NUMERO");
+            do{
+                let res=v1*x;
+                document.write(v1+"*"+x+"="+res+"<br>");
+                x++;
+            }while(x<11);
+        }
+    </script>
+</body>
+</html>
