@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+<body>
+    <h1>MARATON</h1>
+    <br>
+    <p>
+
+        <button onclick="cal();">Registar</button>
+
+    </p>
+    <script type="text/javascript">
+
+            function cal(){
+                let th=0,tm=0,ch=0,cm=0;
+                let op="s"
+                while(op=="s"){
+                    let t=parseInt(prompt("Ingrese tiempo del competidor: "));
+                    let s=prompt("Ingrese sexo (H= hombres // M= mujeres)") ;
+                    if(s=="m" ||s=="M"){
+                        tm=tm+t;
+                        cm++;
+
+                    }else if (s=="h" ||s=="H"){
+                        th=th+t;
+                        ch++;
+
+                    }else{
+                        alert("Opcion no valida")
+                    }
+                    op=prompt("Desea registar otro competidor(s/n): ");
+                }
+                let pm=tm/cm;
+                let ph=th/ch;
+                document.write("Promedio de tiempo de mujeres: "+pm+"<br>");
+                document.write("Promedio de tiempo de hombres: "+ph+"<br>");
+                document.write("Cantidad mujeres: "+cm+"<br>");
+                document.write("Cantidad hombres: "+cm+"<br>");
+            }
+            
+    </script>
+
+</body>
+</html>
