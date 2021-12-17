@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Tarea Asincronica 6</title>
+    
+</head>
+<body>
+    <h1>Tarea Asincronica 6</h1><br>
+    <p>
+        Ingrese nombre: <input type="text" name="nomb" id="nomb">
+        <button onclick="agre();">Ingresar</button><br>
+        Buscar nombre: <input type="text" name="bus" id="bus">
+        
+        <button onclick="enco();">Buscar</button><br>
+    
+    </p>
+    <p id="lis"></p>
+    <p id="res"></p>
+    <script type="text/javascript">
+        let arreglo=[];
+        function agre(){
+            let v1=document.getElementById('nomb').value;
+            arreglo.push(v1);
+            document.getElementById('nomb').value="";
+            encontrar();
+        }
+        function encontrar(){
+            let fragmento="";
+            fragmento="<table border='1'>";
+            for (var i=0;i<arreglo.length;i++){
+                  
+                fragmento+="<tr><td>"+i+"-"+arreglo[i]+"</td></tr>";
+            }
+            fragmento+="</table>";
+            document.getElementById('lis').innerHTML=fragmento;
+        }
+        function enco(){
+            let v2=document.getElementById('bus').value;
+            for(var i=0;i<arreglo.length;i++){
+                if(v2==arreglo[i]){
+                    res="Si Esta"
+                }
+                else{
+                    res="No Existe"
+                }
+            }
+            document.getElementById('res').innerHTML=res;
+        }
+    </script>
+  
+    
+    
+</body>
+</html>
