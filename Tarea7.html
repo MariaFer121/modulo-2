@@ -41,7 +41,6 @@
           <tr>
               <td style="font-size: 20px" align="right" width="50%"><button onclick="inv();"><b>Agregar</b></button></td>
               <td style="font-size: 20px" align="right" width="50%"><button onclick="suma();"><b>Total productos en bodega</b></button></td>
-              <td style="font-size: 20px" align="right" width="50%"><button onclick="suma2();"><b>Valor total de mercancia</b></button></td>
               <td style="font-size: 20px" align="right" width="50%"><button onclick="valmerc();"><b>Valor total de mercancia</button></td>
           </tr>
     
@@ -125,16 +124,6 @@
               }
               alert(sum2)
               document.getElementById("txt").innerHTML="La cantidad total es:"+sum2;
-            }
-
-        function suma2(){
-              
-              sum = 0;
-              for(i=0 ; i < nomina3.length; i++){
-                sum += nomina3[i]  
-              }
-              alert(sum)
-              document.getElementById("txt2").innerHTML=sum;
             }
 
             let fragmento="";
