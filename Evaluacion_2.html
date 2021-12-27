@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <title>La bodega de Juan</title>
+
+</head>
+
+
+<body style="font-family: helvatica; background-image: linear-gradient(-45deg, #F1F4E8 50%,#3A490F 50%);">
+  <div class="container" align="center">
+
+
+    <table border="0"><br><br><br>
+
+      <marquee scrollamount="12">
+        <h1 style="font-size: 80px; color: red; text-align: center;">La Bodega del Juan</h1>
+
+        <img src="https://www.gifsanimados.org/data/media/1343/mercado-imagen-animada-0034.gif">
+        <img src="https://www.gifsanimados.org/data/media/1343/mercado-imagen-animada-0034.gif">
+        <img src="https://www.gifsanimados.org/data/media/1343/mercado-imagen-animada-0034.gif">
+        <img src="https://www.gifsanimados.org/data/media/1343/mercado-imagen-animada-0034.gif">
+        <img src="https://www.gifsanimados.org/data/media/1343/mercado-imagen-animada-0034.gif">
+        <img src="https://www.gifsanimados.org/data/media/1343/mercado-imagen-animada-0034.gif">
+        <img src="https://www.gifsanimados.org/data/media/1343/mercado-imagen-animada-0034.gif">
+        <img src="https://www.gifsanimados.org/data/media/1343/mercado-imagen-animada-0034.gif">
+        <img src="https://www.gifsanimados.org/data/media/1343/mercado-imagen-animada-0034.gif">
+        <img src="https://www.gifsanimados.org/data/media/1343/mercado-imagen-animada-0034.gif">
+        <img src="https://www.gifsanimados.org/data/media/1343/mercado-imagen-animada-0034.gif">
+        <img src="https://www.gifsanimados.org/data/media/1343/mercado-imagen-animada-0034.gif">
+        <img src="https://www.gifsanimados.org/data/media/1343/mercado-imagen-animada-0034.gif">
+      </marquee>
+
+      <img src="https://www.gifsanimados.org/data/media/1343/mercado-imagen-animada-0007.gif">
+      <tr>
+        <td width="70%" style="color: red; font-size: 25px;"><b>Producto:</b></td>
+        <td width="70%"><input type="text" name="pro" id="pro" autofocus title="ejem tomate"></td><br>
+      </tr>
+
+      <tr>
+        <td width="70%" style="color: red; font-size:25px"><b>Familia del item:</b></td>
+        <td width="70%"><input type="text" name="fam" id="fam" title="ejem verduras"></td><br>
+      </tr>
+
+      <tr>
+        <td width="70%" style="color:red; font-size: 25px;"><b>Valor:</b></td>
+        <td width="70%"><input type="text" name="val" id="val" title="ejem precio en pesos"></td><br>
+      </tr>
+
+      <tr>
+        <td width="70%" style="color:red; font-size: 25px"><b>Cantidad:</b></td>
+        <td width="70%"><input type="text" name="can" id="can" title="ejem 1000"></td>
+      </tr>
+      <tr>
+        <td width="70%" style="color:red; font-size: 25px"><b>Nombre item a restar cantidad:</b></td>
+        <td width="70%"><input type="text" name="nombreResta" id="nombreResta"></td>
+      </tr>
+      <tr>
+        <td width="70%" style="color:red; font-size: 25px"><b>Nombre item a sumar cantidad:</b></td>
+        <td width="70%"><input type="text" name="nombreSuma" id="nombreSuma"></td>
+      </tr>
+      <tr>
+        <td width="70%" style="color:red; font-size: 25px"><b>Cantidad a restar:</b></td>
+        <td width="70%"><input type="text" name="sacar" id="sacar"></td>
+      </tr>
+      <tr>
+        <td width="70%" style="color:red; font-size: 25px"><b>Cantidad a sumar:</b></td>
+        <td width="70%"><input type="text" name="sumar" id="sumar"></td>
+      </tr>
+      
+    </table>
+    <tr>
+
+      <!--BOTONES-->
+      <td style="font-size: 20px" align="right" width="70%"><button onclick="ingresoValores();"><b>Sumar a la compra</b></button></td>
+  
+      <td style="font-size: 20px" align="right" width="70%"><button onclick="valorMercancia();"><b>Valor total de
+            mercancia y con el IVA</button></td>
+      <td style="font-size: 20px" align="right" width="50%"><button onclick="quitar();"><b>Restar cantidad de producto</b></button></td>
+      <td style="font-size: 20px" align="right" width="50%"><button onclick="agregar();"><b>Sumar cantidad de producto</b></button></td>
+    </tr>
+
+    <span id="res"></span><br>
+    <p id="lista"></p>
+    <p id="txt"></p>
+    <p id="txt2"></p>
+    <p id="merca"></p>
+    <p id="desc"></p>
+
+  </div>
+
+
+<!--------------------JAVASCRIPT------------------------------------------------------------------------------------------------------------>
+
+
+  <script type="text/javascript">
+
+   //arrays contenedores de datos
+    let nombre = [];
+    let familia = [];
+    let valor = [];
+    let cantidad = [];
+
+  // funcion agrega datos a los arrays
+    function ingresoValores() {
+      let v1=document.getElementById("pro").value;
+            while (!/^[a-z]+$/.test(v1)) {
+            alert("Ingresa solo texto en el cuadro Producto.");
+            document.getElementById("pro").value.focus();
+            }
+            let v2=document.getElementById('fam').value;
+            while (!/^[a-z]+$/.test(v2)) {
+            alert("Ingresa solo texto en el cuadro Familia del Item.");
+            document.getElementById("fam").value.focus();
+            }
+            let v3=parseInt(document.getElementById('val').value);
+            while (!/^[0-9]+$/.test(v3)) {
+            alert("Ingresa solo numeros en el cuadro Valor.");
+            document.getElementById("val").value.focus();
+            }
+            let v4=parseInt(document.getElementById('can').value);
+            while (!/^[0-9]+$/.test(v4)) {
+            alert("Ingresa solo numeros en el cuadro Cantidad.");
+            document.getElementById("can").value.focus();
+            }
+      nombre.push(v1); //se agregan los datos al arreglo
+      familia.push(v2);
+      valor.push(v3);
+      cantidad.push(v4);
+
+      document.getElementById("pro").value = "";
+      document.getElementById("fam").value = "";
+      document.getElementById("val").value = "";
+      document.getElementById("can").value = "";
+
+      mostrar();
+
+    }
+
+     //Funcion para mostar la tabla 
+    function mostrar() {
+
+    let fragmento = "";
+    fragmento = "<table border='1'>";
+    for (var i = 0; i < nombre.length; i++) { //ir agregando filas de celdas
+      fragmento += "<td><td>" + 'Nombre' + " : " + nombre[i] + "</td></td>" + "<td><td>" + "|" + "</td></td>" + "<td><td>" + 'Familia' + " : " + familia[i] + "</td></td>" + "<td><td>" + "|" + "</td></td>" + "<td><td>" + 'Valor' + " : " + valor[i] + "</td></td>" + "<td><td>" + "|" + "</td></td>" + "<td><td>" + 'Cantidad' + " : " + cantidad[i] + "</td+r></td>" + "<tr><td>" + "</tr></td>";
+    }
+    fragmento += "</table>";
+    document.getElementById('lista').innerHTML = fragmento;
+  }
+
+
+//Funcion quitar cantidad del producto
+    function quitar () {
+            let nombreResta = document.getElementById("nombreResta").value;
+            while (!/^[a-z]+$/.test(nombreResta)) {
+            alert("Ingresa solo texto en el cuadro Nombre item a restar cantidad.");
+            document.getElementById("pro").value.focus();
+            }
+            let sacar =parseInt(document.getElementById("sacar").value);
+            while (!/^[0-9]+$/.test(sacar) || sacar>cantidad) {
+              if (!/^[0-9]+$/.test(sacar)) {
+                alert("Ingresa solo numeros en el cuadro Cantidad a restar");
+              }else{
+                alert("El numero ingresado no debe superar el de stock");
+              }
+            document.getElementById("sacar").value.focus();
+            }    
+            var resta=0;
+            for (var i = 0; i < nombre.length; i++) {
+                if(nombreResta == nombre[i] && cantidad[i] >= sacar){
+                  resta= parseInt(cantidad[i])- parseInt(sacar);
+                  cantidad[i]= parseInt(resta);//pendiente explicar mas detalle
+                }      
+            }
+            mostrar();
+            valorMercancia();
+    } 
+
+//Funcion quitar cantidad del producto    
+    function agregar () {
+            let nombreSuma = document.getElementById("nombreSuma").value;
+            while (!/^[a-z]+$/.test(nombreSuma)) {
+            alert("Ingresa solo texto en el cuadro Nombre item a restar cantidad.");
+            document.getElementById("nombreSuma").value.focus();
+            }
+
+            let sumar =parseInt(document.getElementById("sumar").value);
+            while (!/^[0-9]+$/.test(sumar)) {
+            alert("Ingresa solo numeros en el cuadro Cantidad a sumar .");
+            document.getElementById("sumar").value.focus();
+            }
+ 
+            var acum2=0;
+            for (var i = 0; i < nombre.length ; i++) {
+                if(nombreSuma == nombre[i] && cantidad[i] >= sumar){
+                  acum2= parseInt(cantidad[i])+ parseInt(sumar);
+                  cantidad[i]= parseInt(acum2);
+                }
+            }
+            mostrar();
+            valorMercancia();
+    } 
+    
+//funcion Valor total y el iva 
+    function valorMercancia() {
+      
+      
+      let iva = 0
+      tmerc = 0;
+      sum2 = 0;
+      for (let i = 0; i < cantidad.length; i++) {
+        tmerc += (valor[i] * cantidad[i]);
+        sum2 += cantidad[i]
+      }
+      iva = tmerc * 1.19;
+      document.getElementById("merca").innerHTML =  "<table border='1'> <tr> <td> Valor total Neto: " + tmerc + " pesos </tr> <tr> <td>Valor total + IVA : " + iva.toFixed() + " pesos </td> </tr> <tr> <td>Total items Bodega : " + sum2 + " items </td> </tr> </table>"
+     
+      /*"En bodega hay un total de: " + sum2 + " articulos. <br> El valor total neto de la mercancia de la bodega de Juan es: " + tmerc+ " pesos <br> El valor total con IVA de la mercancia de la bodega de Juan es: "+iva.toFixed()+" pesos";//sin valor asume como 0 decimales*/
+    }
+   
+  </script>
+
+  <footer>
+    <marquee direction="right">
+
+      <img src="https://www.gifsanimados.org/data/media/1343/mercado-imagen-animada-0001.gif">
+
+    </marquee>
+
+    <img src="https://www.gifsanimados.org/data/media/1343/mercado-imagen-animada-0024.gif" width="100px"
+      height="100px">
+
+    <img align="right" src="https://www.gifsanimados.org/data/media/1343/mercado-imagen-animada-0032.gif">
+    <marquee>
+      <h4 style="font-family: cursive;"><strong>Desarrollado por Francisco Garcia, Maria Fernanda & Oscar
+          Aduvire...</strong></h4>
+    </marquee>
+
+  </footer>
+
+</body>
+
+</html>
